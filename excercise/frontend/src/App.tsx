@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { generateThrow, getPlayerName, getThrows } from './query';
 
 interface DiceThrow {
   dice: number[];
@@ -7,20 +8,26 @@ interface DiceThrow {
 
 function App() {
   const [throws, setThrows] = useState<DiceThrow[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [playerName, setPlayerName] = useState('default');
 
+  // Fetch player name
+  useEffect(() => {
+    getPlayerName().then(data => setPlayerName(data));
+  }, []);
+
+  // Fetch throws from backend
+  useEffect(() => {
+    getThrows().then(data => setThrows(data));
+    setIsLoading(false);
+  }, []);
+
+  // Roll dice and add to throws
   const rollDice = () => {
-    const newThrow: DiceThrow = {
-      dice: Array.from({ length: 5 }, () => Math.floor(Math.random() * 6) + 1),
-      sum: 0
-    };
-    newThrow.sum = newThrow.dice.reduce((acc, val) => acc + val, 0);
-    
-    setThrows(prev => {
-      const updated = [newThrow, ...prev];
-      return updated.slice(0, 10); // Keep only last 10 throws
-    });
+    generateThrow().then(getThrows).then(data => setThrows(data));
   };
 
+  // Get dice emoji for each dice value
   const getDiceEmoji = (value: number) => {
     const diceEmojis = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
     return diceEmojis[value - 1];
@@ -39,7 +46,13 @@ function App() {
         Roll 5 Dice
       </button>
 
-      {throws.length > 0 && (
+      {isLoading && (
+        <div className="text-center py-16 text-gray-600 text-xl">
+          <p>Loading...</p>
+        </div>
+      )}
+
+      {throws.length > 0 && !isLoading && (
         <div className="bg-white rounded-2xl p-6 shadow-xl">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6">
             Last 10 Throws
@@ -92,10 +105,13 @@ function App() {
                 </tr>
               </tbody>
             </table>
-            <div className="flex justify-center my-4">
-              <label className="text-gray-600 text-xl font-bold">
+            <div className="flex flex-col justify-center m-4 gap-4">
+              <div className="text-gray-600 text-xl font-bold">
+                player: {playerName}
+              </div>
+              <div className="text-gray-600 text-xl font-bold">
                 Total result: {throws.reduce((acc, throwData) => acc + throwData.sum, 0)}
-              </label>
+              </div>
             </div>
           </div>
         </div>
