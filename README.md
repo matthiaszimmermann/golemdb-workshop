@@ -1,5 +1,51 @@
 # GolemDB Workshop
 
+This repository is **supplementary** to the workshop organized for **ETH Warsaw**, held on **August 4–7, 2025**.  
+Here you can find all the necessary information and materials.
+
+## Sample – Hello World!
+
+In the **`samples`** directory, you can find a very simple example (a kind of _"Hello World"_) demonstrating how to use **Golem DB** from a data retrieval perspective.  
+This example is meant to help you with installation and give you a first hands-on experience.
+
+Inside the **`samples`** directory, there are two subdirectories:
+
+- **`python`**
+- **`ts`**
+
+You can choose whichever one you prefer to use.
+
+## Exercise
+
+This project is a very simple dice-rolling game.  
+The player rolls **5 dice** with each throw. The application keeps track of the **last 10 throws**, and the result is the **sum of all dice across these 10 throws**.
+
+The project is located in the **`excercise`** directory and contains:
+
+- A **frontend** app (in the `frontend` directory) implemented in **React** – already ready to use.
+- Two backend implementations: **Python** and **TypeScript** – you can choose whichever you prefer.
+
+The backend is responsible for generating, storing, and retrieving throws. The current implementation uses an **in-memory list**, so once you restart the backend, all data is lost.
+
+### Your Task
+
+Modify the chosen backend implementation to use **Golem DB** as the storage layer.  
+Additionally:
+
+- Ensure only the most recent **10 throws** are stored (remove older ones).
+- This requires creating, deleting, and querying entities – the core functionality of Golem DB.
+
+### Extra Challenge
+
+For those who finish early and want to go further:
+
+- Add a **ranking of the best players** on the main page.
+  For this task, please, everyone use two annotations (at least those two - you can of course use more as you need): <projectId: "golem-db-workshop"> and <player: <player_name>>
+
+### Note
+
+Feel free to experiment and add new features of your own!
+
 ## Pre-funded Accounts
 
 | Account | Address                                    | Hash/Key                                                         |
