@@ -14,7 +14,7 @@ app.get('/', (c) => {
 })
 
 app.get('/api/v1/me', (c) => {
-  return c.text(process.env.PLAYER_NAME || 'default')
+  return c.json(process.env.PLAYER_NAME || 'default')
 })
 
 app.get('/api/v1/throws', (c) => {
