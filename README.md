@@ -35,6 +35,42 @@ Additionally:
 - Ensure only the most recent **10 throws** are stored (remove older ones).
 - This requires creating, deleting, and querying entities – the core functionality of Golem DB.
 
+### Running the Project
+
+To run and test the workshop project, you need to start both the **frontend** and the **backend**.
+
+---
+
+#### Running the Frontend
+
+1. If you don’t have **Bun** installed, visit [bun.sh](https://bun.sh) for installation instructions.
+2. Navigate to the **`excercise/frontend`** directory in the workshop repo.
+3. Run:
+
+   ```bash
+   bun install
+
+   ```
+
+4. Start the development server:
+   ```bash
+   bun run dev
+   ```
+
+The frontend should now be running at **http://localhost:3000**.
+
+#### Running the Backend (Python)
+
+1. If you don’t have the **Poetry** package manager installed, visit [python-poetry.org](https://python-poetry.org/) for installation instructions.
+2. Navigate to the `excercise/backend-python` directory in the workshop repo.
+3. Start the FastAPI development server:
+
+   ```bash
+   poetry run fastapi dev main.py
+   ```
+
+The backend should now be running at **http://localhost:8000**.
+
 ### Extra Challenge
 
 For those who finish early and want to go further:
@@ -100,3 +136,7 @@ Feel free to experiment and add new features of your own!
 | 48      | 0x411108FA9d7bCa1B2732319a3c7E5d25A2ed81AA | e9543f037356d1fc3b27c4638c8ed79b5e0850278d400ca7f867202979984167 |
 | 49      | 0x4725FD39d3242C3574279c7369c186723D1bfa86 | 7f2d856fc114921cb1ff16ea3fa721a6484e0e0f190863ebd7e85e62101bb6a5 |
 | 50      | 0x0261230894d640fED59fb6Da7d838b9C5Ff0251F | 2f1945e6ce94b02eda969d3835f69b4e6aa03753b78f05895d11d30f1a251fad |
+
+```
+
+```
