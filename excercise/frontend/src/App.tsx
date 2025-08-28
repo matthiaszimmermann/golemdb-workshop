@@ -9,6 +9,7 @@ interface DiceThrow {
 function App() {
   const [throws, setThrows] = useState<DiceThrow[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isRolling, setIsRolling] = useState(false);
   const [playerName, setPlayerName] = useState('default');
 
   // Fetch player name
@@ -24,7 +25,11 @@ function App() {
 
   // Roll dice and add to throws
   const rollDice = () => {
-    generateThrow().then(getThrows).then(data => setThrows(data));
+    setIsRolling(true);
+    generateThrow().then(getThrows).then(data => {
+      setThrows(data);
+      setIsRolling(false);
+    });
   };
 
   // Get dice emoji for each dice value
@@ -41,12 +46,38 @@ function App() {
       
       <button 
         onClick={rollDice} 
-        className="block mx-auto mb-8 px-8 py-4 text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-600 text-white rounded-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
+        disabled={isRolling}
+        className={`block mx-auto mb-8 px-8 py-4 text-xl font-bold rounded-full cursor-pointer transition-all duration-300 ${
+          isRolling 
+            ? 'bg-gray-400 text-gray-200 cursor-not-allowed' 
+            : 'bg-gradient-to-r from-purple-500 to-blue-600 text-white hover:shadow-lg hover:-translate-y-1 active:translate-y-0'
+        }`}
       >
-        Roll 5 Dice
+        {isRolling ? 'Rolling...' : 'Roll 5 Dice'}
       </button>
 
-      {isLoading && (
+      {/* Animated dice rolling loader */}
+      {isRolling && (
+        <div className="text-center py-8">
+          <div className="flex justify-center items-center gap-4 mb-4">
+            {[1, 2, 3, 4, 5].map((dice, index) => (
+              <div
+                key={dice}
+                className="text-6xl animate-bounce"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animationDuration: '0.6s'
+                }}
+              >
+                🎲
+              </div>
+            ))}
+          </div>
+          <p className="text-lg text-gray-600 font-semibold">Rolling the dice...</p>
+        </div>
+      )}
+
+      {isLoading && !isRolling && (
         <div className="text-center py-16 text-gray-600 text-xl">
           <p>Loading...</p>
         </div>
@@ -117,7 +148,7 @@ function App() {
         </div>
       )}
 
-      {throws.length === 0 && (
+      {throws.length === 0 && !isRolling && (
         <div className="text-center py-16 text-gray-600 text-xl">
           <p>Click "Roll 5 Dice" to start rolling!</p>
         </div>
