@@ -1,4 +1,4 @@
-from golem_base_sdk import EntityKey, GenericBytes, GolemBaseClient
+from golem_base_sdk import GenericBytes, GolemBaseClient
 import asyncio
 
 async def hello_world():

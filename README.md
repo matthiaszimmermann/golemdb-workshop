@@ -100,9 +100,18 @@ For those who finish early and want to go further:
 
 Feel free to experiment and add new features of your own!
 
+## Useful links
+
+Docs - https://docs.golem-base.io/
+Kaolin (L3) dashboard - https://kaolin.holesky.golem-base.io/
+Kaolin explorer - https://explorer.kaolin.holesky.golem-base.io/
+Golem DB (L2) dashboard - https://l2.holesky.golem-base.io/
+Golem DB repo - https://github.com/Golem-Base/golembase-op-geth
+Workshop repo - https://github.com/krzysiekfonal/golemdb-workshop
+
 ## Pre-funded Accounts
 
-| Account | Address                                    | Hash/Key                                                         |
+| Account | Address                                    | PrivKey                                                          |
 | ------- | ------------------------------------------ | ---------------------------------------------------------------- |
 | 1       | 0x6186B0DbA9652262942d5A465d49686eb560834C | dfbe5730855f461c3465d75843023a99ea7c051bf49554a4c6a55e2272823cdc |
 | 2       | 0x9D0931C1fCE1306d11074525f86A843469b8a218 | bfcb7d6bf916cc6fbf48f35c2cbc61989297d8d95cb08e461494411ab69af979 |
