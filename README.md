@@ -102,12 +102,12 @@ Feel free to experiment and add new features of your own!
 
 ## Useful links
 
-Docs - https://docs.golem-base.io/
-Kaolin (L3) dashboard - https://kaolin.holesky.golem-base.io/
-Kaolin explorer - https://explorer.kaolin.holesky.golem-base.io/
-Golem DB (L2) dashboard - https://l2.holesky.golem-base.io/
-Golem DB repo - https://github.com/Golem-Base/golembase-op-geth
-Workshop repo - https://github.com/krzysiekfonal/golemdb-workshop
+- Docs - https://docs.golem-base.io/
+- Kaolin (L3) dashboard - https://kaolin.holesky.golem-base.io/
+- Kaolin explorer - https://explorer.kaolin.holesky.golem-base.io/
+- Golem DB (L2) dashboard - https://l2.holesky.golem-base.io/
+- Golem DB repo - https://github.com/Golem-Base/golembase-op-geth
+- Workshop repo - https://github.com/krzysiekfonal/golemdb-workshop
 
 ## Pre-funded Accounts
 
