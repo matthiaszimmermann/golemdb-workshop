@@ -3,10 +3,10 @@ import asyncio
 
 async def hello_world():
     client = await GolemBaseClient.create_ro_client(
-        "https://kaolin.holesky.golem-base.io/rpc", 
-        "wss://kaolin.holesky.golem-base.io/rpc/ws"
+        "https://ethwarsaw.holesky.golemdb.io/rpc", 
+        "wss://ethwarsaw.holesky.golemdb.io/rpc/ws"
     )
-    print(await client.get_storage_value(GenericBytes.from_hex_string("0xcc3fc30039bd5b5abcaeaae25eea2e536e429d93fa06109888c459e7b55bc878")))
+    print(await client.get_storage_value(GenericBytes.from_hex_string("0xf4888ec1ffb3f8bc794f6f0d61b887e2bd3d0ac9e81f8ba63807d1f3497285ee")))
     await client.disconnect()
 
 asyncio.run(hello_world())
