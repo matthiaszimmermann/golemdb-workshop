@@ -1,6 +1,7 @@
-# GolemDB Workshop
+# Golem DB Workshop
 
-This repository is **supplementary** to the workshop organized for **ETH Warsaw**, held on **August 4–7, 2025**.  
+This repository is supplementary to the workshop organized for the [Loops Hacker House New Delhi](https://luma.com/lg3s2l7d) on September 23rd, 2025.
+
 Here you can find all the necessary information and materials.
 
 ## Sample – Hello World!
@@ -15,9 +16,10 @@ Inside the **`samples`** directory, there are two subdirectories:
 
 You can choose whichever one you prefer to use.
 
-## Exercise
+## Exercise Project
 
-This project is a very simple dice-rolling game.  
+This project is a very simple dice-rolling game.
+
 The player rolls **5 dice** with each throw. The application keeps track of the **last 10 throws**, and the result is the **sum of all dice across these 10 throws**.
 
 The project is located in the **`excercise`** directory and contains:
@@ -61,20 +63,23 @@ The frontend should now be running at **http://localhost:3000**.
 
 #### Running the Backend (Python)
 
-1. If you don’t have the **Poetry** package manager installed, visit [python-poetry.org](https://python-poetry.org/) for installation instructions.
+1. If you don't have **uv** installed, visit [docs.astral.sh/uv](https://docs.astral.sh/uv/) for installation instructions.
 2. Navigate to the `excercise/backend-python` directory in the workshop repo.
-3. Start the FastAPI development server:
+3. Start the server:
 
    ```bash
-   poetry run fastapi dev main.py
+   uv run fastapi dev main.py
    ```
 
-The backend server should now be running at **http://localhost:8000**.
+The server should then be running at [localhost:8000](http://localhost:8000).
+Corresponding OpenAPI docs are available at [localhost:8000/docs](http://localhost:8000/docs).
 
 #### Running the Backend (TypeScript)
 
 1. If you don’t have **Bun** installed, visit [bun.sh](https://bun.sh) for installation instructions.
-2. Navigate to the **`excercise/backend-ts`** directory in the workshop repo.
+
+2. Navigate to the `excercise/backend-ts` directory in the workshop repo.
+
 3. Run:
 
    ```bash
@@ -82,12 +87,12 @@ The backend server should now be running at **http://localhost:8000**.
 
    ```
 
-4. Start the development server:
+4. Start the server:
    ```bash
    bun run dev
    ```
 
-The backend server should now be running at **http://localhost:8000**.
+The server should now be running at [localhost:8000](http://localhost:8000).
 
 ### Extra Challenge
 
@@ -114,6 +119,8 @@ Feel free to experiment and add new features of your own!
 - Feedback for us (help us make better product) - https://docs.google.com/forms/d/e/1FAIpQLSedCg-tm5Vp896teCRyfkQM5IEFxSF3jH8POQKvrm7accCRvw/viewform
 
 ## Pre-funded Accounts
+
+Should an account balance become too low, just top it up using the [Faucet](https://ethwarsaw.holesky.golemdb.io/faucet/).
 
 | Account | Address                                    | PrivKey                                                          |
 | ------- | ------------------------------------------ | ---------------------------------------------------------------- |

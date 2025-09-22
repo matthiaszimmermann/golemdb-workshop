@@ -1,13 +1,14 @@
-#### Running the Backend (Python)
+## Starting the Python Server (Backend)
 
-1. If you don’t have the **Poetry** package manager installed, visit [python-poetry.org](https://python-poetry.org/) for installation instructions.
+1. If you don't have **uv** installed, visit [docs.astral.sh/uv](https://docs.astral.sh/uv/) for installation instructions.
 
 2. Navigate to the `excercise/backend-python` directory in the workshop repo.
 
-3. Start the FastAPI development server:
+3. Start the server:
 
    ```bash
-   poetry run fastapi dev main.py
+   uv run fastapi dev main.py
    ```
 
-The backend server should now be running at **http://localhost:8000**.
+The server should now be running at [localhost:8000](http://localhost:8000).
+Corresponding OpenAPI docs are available at [localhost:8000/docs](http://localhost:8000/docs).

@@ -2,22 +2,19 @@
 name = "backend-python"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Your Name",email = "you@example.com"}
-]
-readme = "README.md"
+authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<4"
+readme = "README.md"
 dependencies = [
     "fastapi[standard] (>=0.116.1,<0.117.0)",
     "pydantic (>=2.11.7,<3.0.0)",
     "dotenv (>=0.9.9,<0.10.0)",
-    "golem-base-sdk (>=0.1.0,<0.2.0)"
+    "golem-base-sdk>=0.1.0,<0.2.0",
 ]
 
-
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry]
-package-mode = false
+[tool.uv]
+package = false

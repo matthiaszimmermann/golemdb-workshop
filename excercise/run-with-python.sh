@@ -13,5 +13,5 @@ concurrently \
     --names "backend,frontend" \
     --prefix-colors "blue,green" \
     --kill-others \
-    "cd backend-python && poetry install && poetry run fastapi dev main.py" \
+    "cd backend-python && uv sync && uv run fastapi dev main.py" \
     "cd frontend && bun install && bun run dev" 
