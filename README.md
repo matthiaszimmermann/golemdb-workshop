@@ -6,7 +6,7 @@ Here you can find all the necessary information and materials.
 
 ## Sample – Hello World!
 
-In the **`samples`** directory, you can find a very simple example (a kind of _"Hello World"_) demonstrating how to use **Golem DB** from a data retrieval perspective.  
+In the **`samples`** directory, you can find a very simple example (a kind of _"Hello World"_) demonstrating how to use **Golem DB Client** from a data retrieval perspective.  
 This example is meant to help you with installation and give you a first hands-on experience.
 
 Inside the **`samples`** directory, there are two subdirectories:
@@ -15,6 +15,28 @@ Inside the **`samples`** directory, there are two subdirectories:
 - **`ts`**
 
 You can choose whichever one you prefer to use.
+
+### Typescript "Hello World"
+
+To run the Typescript "Hello World" run the following commands.
+If you don’t have **Bun** installed, visit [bun.sh](https://bun.sh) for installation instructions.
+
+```bash
+cd samples/ts
+bun install
+bun run index.ts
+```
+
+### Python "Hello World"
+
+
+To run the Python "Hello World" run the following commands.
+If you don't have **uv** installed, visit [docs.astral.sh/uv](https://docs.astral.sh/uv/) for installation instructions.
+
+```bash
+cd samples/python
+uv run hello_world.py
+```
 
 ## Exercise Project
 
@@ -51,7 +73,6 @@ To run and test the workshop project, you need to start both the **frontend** an
 
    ```bash
    bun install
-
    ```
 
 4. Start the development server:
