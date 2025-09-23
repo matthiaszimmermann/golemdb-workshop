@@ -139,6 +139,47 @@ Feel free to experiment and add new features of your own!
 - Golem DB repo - https://github.com/Golem-Base/golembase-op-geth
 - Feedback for us (help us make better product) - https://docs.google.com/forms/d/e/1FAIpQLSedCg-tm5Vp896teCRyfkQM5IEFxSF3jH8POQKvrm7accCRvw/viewform
 
+## Running a Dockerized Golem DB Node 
+
+### Create the Container
+
+ ```bash
+ docker run -d \
+  -p 8545:8545 \
+  -p 8546:8546 \
+  --name golembase-node \
+  golemnetwork/golembase-op-geth:latest \
+  --dev \
+  --http \
+  --http.api 'eth,web3,net,debug,golembase' \
+  --verbosity 3 \
+  --http.addr '0.0.0.0' \
+  --http.port 8545 \
+  --http.corsdomain '*' \
+  --http.vhosts '*' \
+  --ws \
+  --ws.addr '0.0.0.0' \
+  --ws.port 8546 \
+  --datadir '/geth_data'
+```
+
+### Fund Accounts
+
+You can use the golembase CLI of the running container to prefund accounts for creating/updating entities as shown below.
+
+```
+docker exec golembase-node golembase account import --privatekey 0x<your private key>
+docker exec golembase-node golembase account fund
+docker exec golembase-node golembase account balance
+```
+
+
+The node URLs are then as follows
+```
+http://localhost:8545
+ws://localhost:8546
+```
+
 ## Pre-funded Accounts
 
 Should an account balance become too low, just top it up using the [Faucet](https://ethwarsaw.holesky.golemdb.io/faucet/).
